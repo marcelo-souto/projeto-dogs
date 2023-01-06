@@ -4,7 +4,7 @@ import Input from '../Forms/Input';
 import Button from '../Forms/Button';
 import useForm from '../../hooks/useForm';
 import { UserContext } from '../../UserContext';
-import Erro from '../../helper/Error';
+import Error from '../../helper/Error';
 import styles from './LoginForm.module.css';
 import stylesBtn from '../Forms/Button.module.css';
 import Head from '../../helper/Head';
@@ -35,7 +35,7 @@ function LoginForm() {
         ) : (
           <Button>Entrar</Button>
         )}
-        {erro && <Erro error={erro} />}
+        <Error error={erro && 'Dados incorretos.'} />
       </form>
       <Link className={styles.perdeu} to="/login/perdeu">
         Perdeu a Senha?
